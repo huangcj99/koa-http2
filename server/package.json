@@ -1,0 +1,29 @@
+{
+  "name": "koa-http2",
+  "version": "1.0.0",
+  "description": "koa http2",
+  "main": "startup.js",
+  "scripts": {
+    "start": "nodemon src/startup.js"
+  },
+  "keywords": [
+    "koa",
+    "http2"
+  ],
+  "author": "joe <smallcatcat.joe@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.12.2",
+    "handlebars": "^4.0.11",
+    "kind-of": "^6.0.2",
+    "koa": "^2.4.1",
+    "koa-log4": "2.1.0",
+    "koa-logger": "^1.3.0",
+    "koa-router": "^7.3.0",
+    "koa-send": "^4.1.2",
+    "koa-views": "^6.1.3",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "nodemon": "^1.13.3"
+  }
+}
