@@ -3,7 +3,7 @@ const root = path.resolve(__dirname, '../../../public');
 
 module.exports = {
   root: root,
-  serverPort: 9002,
+  serverPort: 9001,
   // 客户端公参接收配置
   client_params_keys: ['caller', 'os', 'ver', 'platform', 'imei', 'mac', 'ch', 'token'],
 

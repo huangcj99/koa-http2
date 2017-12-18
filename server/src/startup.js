@@ -58,7 +58,6 @@ if (require.main === module) {
   if (!mode) {
     mode = 'development';
   }
-
   conf.init({
     mode
   });
@@ -87,7 +86,7 @@ if (require.main === module) {
   }
   // 默认 5000
   if (!port) {
-    port = 5000;
+    port = 9000;
   }
 
   // 指定运行ip地址
