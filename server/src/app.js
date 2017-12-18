@@ -1,9 +1,34 @@
 const path = require('path');
 const Koa = require('koa');
-const app = new Koa();
+// const app = new Koa();
+const http2 = require('http2');
+const debug = require('debug')('koa:application');
 const views = require('koa-views');
 const fs = require('fs');
 const staticType = /\.(eot|svg|ttf|woff|woff2|js|css|png|jpe?g|gif|svg)(\?\S*)?$/;
+const keysOptions = {
+  key: fs.readFileSync('./src/keys/server.key'),
+  cert: fs.readFileSync('./src/keys/server.crt')
+};
+
+// 重写Koa的listen方法
+class KoaOnhttp2 extends Koa {
+  constructor() {
+    super()
+  }
+
+  listen(...args) {
+    debug('listen');
+
+    const server = http2.createServer(
+      keysOptions,
+      this.callback()
+    );
+    return server.listen(...args);
+  }
+}
+
+const app = new KoaOnhttp2();
 
 function init() {
   const conf = require('./conf');
@@ -21,7 +46,7 @@ function init() {
   const logger = require('./components/logger');
   const log4js = logger.log4js;
   const pageRouter = router(routesPath);
-  
+
   // views 路径
   app.use(views(path.resolve(conf.root), {
     extension: 'html',
