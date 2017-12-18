@@ -23,12 +23,12 @@ class KoaOnhttp2 extends Koa {
 const app = new KoaOnhttp2();
 ```
 
-###http1.1
+### http1.1
 下图中，同一个页面下的三个资源，Connection ID不同，分别建立了三条TCP链接
 
 ![image](https://github.com/smallcatcat-joe/koa-http2/raw/master/images/http1.1.png)
 
-###http2
+### http2
 而下图，http2则使用了一条TCP链接就将资源全数返回
 
 ![image](https://github.com/smallcatcat-joe/koa-http2/raw/master/images/http2.png)
