@@ -15,6 +15,7 @@
   "dependencies": {
     "commander": "^2.12.2",
     "handlebars": "^4.0.11",
+    "hoek": "^4.2.1",
     "http2": "^3.3.7",
     "kind-of": "^6.0.2",
     "koa": "^2.4.1",
