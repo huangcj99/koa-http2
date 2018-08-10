@@ -24,7 +24,7 @@ const app = new KoaOnhttp2();
 ```
 
 ### http1.1
-下图中，同一个页面下的三个资源，Connection ID不同，分别建立了三条TCP链接
+下图中，同一个页面下的三个资源，Connection ID不同，分别建立了两条TCP链接
 
 ![image](https://github.com/smallcatcat-joe/koa-http2/raw/master/images/http1.1.png)
 
